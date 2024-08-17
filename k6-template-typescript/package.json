@@ -1,0 +1,60 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/k6io/example-typescript.git",
+  "author": "Simon Aronsson <simme@k6.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.13.16",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.13.8",
+    "@babel/preset-env": "7.13.15",
+    "@babel/preset-typescript": "7.13.0",
+    "@types/aws4": "^1.11.2",
+    "@types/k6": "~0.37.0",
+    "@types/node": "14.0.1",
+    "@types/webpack": "5.28.0",
+    "assert": "^2.0.0",
+    "aws4": "^1.11.0",
+    "babel-loader": "8.2.2",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
+    "clean-webpack-plugin": "4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "crypto-browserify": "^3.12.0",
+    "file-list-plugin": "^2.0.5",
+    "file-system": "^2.2.2",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "typescript": "4.2.4",
+    "url": "^0.11.0",
+    "util": "^0.12.5",
+    "webpack": "5.35.1",
+    "webpack-cli": "4.6.0",
+    "webpack-glob-entries": "^1.0.1",
+    "webpack-shell-plugin-next": "^2.2.2",
+    "winston": "3.8.2"
+  },
+  "scripts": {
+    "yarn": "yarn",
+    "start": "webpack",
+    "build": "yarn webpack",
+    "k6-test": "npm run build && npm run case1 && npm run case2 && npm run case3",
+    "compile": "npm run build",
+    "case1": "k6 run dist/case1-test.js >> dist/case1.log",
+    "case2": "k6 run dist/case2-test.js >> dist/case2.log",
+    "case3": "k6 run dist/case3-test.js >> dist/case3.log"
+  },
+  "dependencies": {
+    "js-to-ts-converter": "^0.18.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
+}
